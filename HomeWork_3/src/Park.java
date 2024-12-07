@@ -6,7 +6,7 @@ public class Park {
     private String parkName;
     private String city;
     private ParkAttraction[] attraction;
-    //Конструктор внешнего класса
+    //Конструкторы внешнего класса
     public Park(String parkName, String city, ParkAttraction[] attraction) {
         this.parkName = parkName;
         this.city = city;
@@ -17,6 +17,7 @@ public class Park {
         this.city = city;
         this.attraction = new ParkAttraction[0];
     }
+    //Внутренний класс
     public class ParkAttraction {
         private String name;
         private String time;
@@ -68,6 +69,7 @@ public class Park {
     public void setAttraction(ParkAttraction[] attraction){
         this.attraction = attraction;
     }
+    //Метод для вывода информации о парках в консоль
     public void printPark() {
         System.out.println("Название парка: " + getParkName());
         System.out.println("Город в котором находится: " + getCity());
