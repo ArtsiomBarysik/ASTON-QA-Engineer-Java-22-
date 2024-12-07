@@ -5,17 +5,23 @@
 public class Park {
     private String parkName;
     private String city;
-    private ParkAttraction attraction;
-
-    public Park(String parkName, String city, String name, String time, double cost) {
+    private ParkAttraction[] attraction;
+    //Конструктор внешнего класса
+    public Park(String parkName, String city, ParkAttraction[] attraction) {
         this.parkName = parkName;
         this.city = city;
-        this.attraction = new ParkAttraction(name, time, cost);
+        this.attraction = attraction;
+    }
+    public Park(String parkName, String city) {
+        this.parkName = parkName;
+        this.city = city;
+        this.attraction = new ParkAttraction[0];
     }
     public class ParkAttraction {
         private String name;
         private String time;
         private double cost;
+        //Конструктор внутреннего класса
         public ParkAttraction(String name, String time, double cost) {
             this.name = name;
             this.time = time;
@@ -42,32 +48,36 @@ public class Park {
             this.cost = cost;
         }
     }
-    //Набор геттеров для внутреннего класса
+    //Набор геттеров для внешнего класса
     public String getParkName(){
         return parkName;
     }
     public String getCity(){
         return city;
     }
-    public ParkAttraction getAttraction(){
+    public ParkAttraction[] getAttraction(){
         return attraction;
     }
-    //Набор сеттеров для внутреннего класса
+    //Набор сеттеров для внешнего класса
     public void setParkName(String parkName){
         this.parkName = parkName;
     }
     public void setCity(String city){
         this.city = city;
     }
-    public void setAttraction(ParkAttraction attraction){
+    public void setAttraction(ParkAttraction[] attraction){
         this.attraction = attraction;
     }
     public void printPark() {
         System.out.println("Название парка: " + getParkName());
         System.out.println("Город в котором находится: " + getCity());
-        System.out.println("Аттракцион в парке: " + getAttraction().getName());
-        System.out.println("Время работы: " + getAttraction().getTime());
-        System.out.println("Стоимость: " + getAttraction().getCost());
+        System.out.println("Аттракционы в парке:");
+        for (ParkAttraction attraction : attraction){
+            System.out.println("Название: " +attraction.getName());
+            System.out.println("Время работы: "+attraction.getTime());
+            System.out.println("Стоимость: "+attraction.getCost());
+        }
+        System.out.println();
     }
 }
 
