@@ -1,5 +1,4 @@
-/* Класс кота
- */
+// Класс кота
     public class Cat extends Animal {
     private String color;
     private boolean satiety = false;
@@ -10,7 +9,6 @@
         this.color = color;
         catClassCount++;
     }
-
     // Геттеры класса Cat
     public String getColor() {
         return color;
@@ -28,16 +26,15 @@
     public void setSatiety(boolean satiety) {
         this.satiety = satiety;
     }
-
     // Метод бега кота
     @Override
     public void run(int distance) {
         if (distance <= 0) {
-            System.out.println("Котики конечно лентяи, но не до такой степени");
+            System.out.println("Котики конечно лентяи, но не до такой степени..");
         } else if (distance <= 200) {
             System.out.println(getName() + " пробежал " + distance + " метров.");
         } else {
-            System.out.println("Полегче, это же не гепард");
+            System.out.println("Полегче, это же не гепард!");
         }
     }
     // Метод плавания кота
@@ -47,10 +44,23 @@
     }
     // Метод проверки кота на сытость
     public void checkSatiety () {
-        if (satiety == true) {
-            System.out.println(getName() + "наевся и спит");
+        if (satiety) {
+            System.out.println(getName() + " наевся и спит:3");
         } else {
-            System.out.println(getName() + " голодный и злой");
+            System.out.println(getName() + " голодный и злой :c");
+        }
+    }
+    // Метод кушанья из миски
+    public void eatFromBowl (int food, Bowl bowl) {
+        if (!satiety && bowl.getFoodAmount() >= food) {
+            satiety = true;
+            bowl.consumeFood(food);
+            System.out.println(getName() + " съел " + food + " единиц еды.");
+        }
+        else if (satiety) {
+            System.out.println(getName() + " не голоден, удивительно..");
+        } else {
+            System.out.println(getName() + " считает что в миске недостаточно еды.");
         }
     }
 }

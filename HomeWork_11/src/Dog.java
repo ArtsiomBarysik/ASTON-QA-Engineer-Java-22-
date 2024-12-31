@@ -1,5 +1,4 @@
-/* Класс собаки
- */
+// Класс собаки
 public class Dog extends Animal {
     private String color;
     private static int dogClassCount = 0;
@@ -24,15 +23,14 @@ public class Dog extends Animal {
     @Override
     public void run(int distance) {
         if (distance <= 0) {
-            System.out.println("Ну что ты так, палку хоть кинь");
+            System.out.println("Ну что ты так, палку хоть кинь..");
         } else if (distance <= 500) {
             System.out.println(getName() + " пробежал " + distance + " метров.");
         } else {
-            System.out.println("Попробуй сам столько пробежать");
+            System.out.println("Попробуй сам столько пробежать!");
         }
     }
-
-    // Метод плавания кота
+    // Метод плавания Собаки
     @Override
     public void swim(int distance) {
         if (distance <= 0) {
