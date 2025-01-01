@@ -57,5 +57,12 @@ public class Main {
         for (int i = 0; i<catArray.length; i++) {
             catArray[i].checkSatiety();
         }
+        // Проверка 2 задания
+        Circle circle =  new Circle(3, "Black", "Red");
+        Rectangle rectangle = new Rectangle(14, 4, "Green", "Blue");
+        Triangle triangle = new Triangle(2, 2, 2, "Grey", "Yellow");
+        circle.printCharacteristics();
+        rectangle.printCharacteristics();
+        triangle.printCharacteristics();
     }
 }
