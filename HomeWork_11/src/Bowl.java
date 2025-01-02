@@ -24,9 +24,7 @@ public class Bowl {
     }
     // Метод уменьшения еды в миске
     public void consumeFood (int food) {
-        if (foodAmount > 0) {
             foodAmount = foodAmount - food;
-        }
     }
     // Метод проверки кол-ва еды
     public void checkFood () {
