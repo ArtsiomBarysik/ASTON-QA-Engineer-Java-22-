@@ -5,7 +5,7 @@ public class Main {
     public static void main(String[] args) {
             Shape circle = new Circle(50, Color.RED, Color.BLACK);
             Shape rectangle = new Rectangle(100, 50, Color.GREEN, Color.BLUE);
-            Shape triangle = new Triangle(50, 50, 50, Color.YELLOW, Color.MAGENTA);
+            Shape triangle = new Triangle(new int[]{100, 150, 50}, new int[]{300, 400, 400}, Color.YELLOW, Color.MAGENTA);
 
             Shape[] shapes = {circle, rectangle, triangle};
 
