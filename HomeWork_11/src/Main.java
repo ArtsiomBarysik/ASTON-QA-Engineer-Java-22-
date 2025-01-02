@@ -46,12 +46,12 @@ public class Main {
         Bowl firstBowl = new Bowl(0);
         firstBowl.checkFood();
         firstBowl.addFood(24);
-        // В миске остается 4 единицы еды, Йося остался голодным
         firstBowl.checkFood();
         // Кормлю массив котов
         for (int i = 0; i < catArray.length; i++) {
             catArray[i].eatFromBowl(5,firstBowl);
         }
+        // В миске остается 4 единицы еды, Йося остался голодным, проверяю остаток еды
         firstBowl.checkFood();
         // Проверяю их сытость
         for (int i = 0; i<catArray.length; i++) {
